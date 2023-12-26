@@ -1,0 +1,30 @@
+package ineuron.PojoToJSON;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import ineuron.PojoToJSON.model.Product;
+
+public class App {
+	public static void main(String[] args) throws JsonProcessingException {
+
+		Product product = new Product();
+		product = getProductDetails(product);
+
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonData=mapper.writeValueAsString(product);
+
+		System.out.println(jsonData);
+
+	}
+
+	public static Product getProductDetails(Product product) {
+
+		product.setId(10);
+		product.setName("shanaya");
+		product.setPrice(234.45f);
+
+		return product;
+
+	}
+}

@@ -1,0 +1,55 @@
+package in.ineuron.controller;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.ineuron.model.Company;
+import in.ineuron.model.Customer;
+
+@RestController
+@RequestMapping("/api/customer")
+public class CustomerController {
+
+	@GetMapping("/report/{id}")
+	public ResponseEntity<Customer> showAllCustomer(@PathVariable Integer id) {
+
+		Customer customer = new Customer();
+		customer.setCid(id);
+		customer.setCname("Sachin");
+		customer.setAvg(54.78f);
+		customer.setTeamName(new String[] { "MI", "IND", "ASIA" });
+		customer.setStudies(List.of("10th", "11th", "Grad"));
+		customer.setPhoneNo(Set.of(99231312L, 2132131313L, 2342424L));
+		customer.setIddetails(Map.of("Adhar", 7222321L, "PAN", 782787L));
+
+		customer.setCompany(new Company("CITIBANK", "IT", "Pune", 2000));
+
+		ResponseEntity<Customer> entity = new ResponseEntity<Customer>(customer, HttpStatus.OK);
+
+		return entity;
+
+	}
+	
+	public ResponseEntity<Customer> registerCustomer(@RequestBody Customer customer)
+	{
+		System.out.println(customer);
+		int id=10;
+		
+	   String body="Customer is registered with Id::"+id;
+		
+		return new ResponseEntity<Customer>(customer, HttpStatus.OK);
+		
+		
+	}
+
+}

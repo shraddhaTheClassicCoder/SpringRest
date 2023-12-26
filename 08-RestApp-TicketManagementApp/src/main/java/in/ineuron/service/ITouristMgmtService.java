@@ -1,0 +1,15 @@
+package in.ineuron.service;
+
+import java.util.List;
+
+import in.ineuron.model.Tourist;
+
+public interface ITouristMgmtService {
+
+	public String registerTourist(Tourist tourist);
+	public List<Tourist> getTouristDetails();
+	public Tourist fetchTouristById(Integer id);
+	public String updateTouristRecord(Tourist tourist);
+	public String updateTouristById(Integer id,Float percentage);
+	public String deleteTouristById(Integer id);
+}

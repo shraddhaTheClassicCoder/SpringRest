@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;09-TicketManagementApp-SwaggerIntegration&apos; to &apos;10-TicketManagementApp-SwaggerIntegration&apos;" description="Rename resource &apos;09-TicketManagementApp-SwaggerIntegration&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/09-TicketManagementApp-SwaggerIntegration" name="10-TicketManagementApp-SwaggerIntegration" stamp="1703396636339" updateReferences="true"/>
+</session>

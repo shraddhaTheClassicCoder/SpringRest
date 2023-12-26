@@ -1,0 +1,20 @@
+package in.ineuron.model;
+
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import lombok.Data;
+
+@Data
+@javax.persistence.Entity
+public class Tourist {
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
+	private String packageType;
+	private Double budget;
+	
+	
+}

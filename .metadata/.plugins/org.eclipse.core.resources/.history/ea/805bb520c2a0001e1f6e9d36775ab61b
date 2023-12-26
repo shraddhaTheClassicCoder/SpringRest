@@ -1,0 +1,5 @@
+package ineuron.PojoToJSON.model;
+
+public class Product {
+
+}

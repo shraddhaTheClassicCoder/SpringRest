@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;in.ineuron.model&apos; to &apos;12-SpringRest-ConsumerApp/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;11-SpringRest-ProviderApp&apos;&#x0D;&#x0A;- Destination element: &apos;12-SpringRest-ConsumerApp/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;11-SpringRest-ProviderApp/src/main/java/in.ineuron.model&apos;" description="Copy package" destination="=12-SpringRest-ConsumerApp/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;in.ineuron.model" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1703489879413" version="1.0"/>
+</session>

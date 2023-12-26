@@ -1,0 +1,14 @@
+{
+"id":10,
+"firstName":"shraddha",
+"lastName":"sahane",
+"active":true,
+"address":{
+"street":"25/1",
+"city":"mumbai",
+"state":"Maharashtra",
+"zip":"560026",
+"country":"INDIA"
+},
+"language":["java","python","ruby","angular"]
+}

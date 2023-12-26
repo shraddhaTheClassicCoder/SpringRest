@@ -1,0 +1,31 @@
+{
+"cid": 10,
+"avg": 54.78,
+"cname": "Sachin",
+"teamName": [
+"MI",
+"IND",
+"ASIA"
+],
+"studies": [
+"10th",
+"11th",
+"Grad"
+],
+"phoneNo": [
+2132131313,
+99231312,
+2342424
+],
+"iddetails": {
+"PAN": 782787,
+"Adhar": 7222321
+},
+"company": {
+"cname": "CITIBANK",
+"ctype": "IT",
+"caddress": "Pune",
+"csize": 2000
+}
+
+}

@@ -1,0 +1,21 @@
+package ineuron.PojoToJSON;
+
+import ineuron.PojoToJSON.model.Product;
+
+public class App {
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+	public static Product getProductDetails(Product product) {
+
+		product.setId(10);
+		product.setName("shanaya");
+		product.setPrice(234.45f);
+
+		return product;
+
+	}
+}

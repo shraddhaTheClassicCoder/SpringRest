@@ -1,0 +1,33 @@
+package in.ineuron.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.ineuron.dao.TouristRepo;
+import in.ineuron.model.Tourist;
+
+@Service
+public class ITouristServiceImpl implements ITouristMgmtService {
+
+	@Autowired
+	private TouristRepo repo;
+
+	@Override
+	public String registerTourist(Tourist tourist) {
+
+		Integer id = repo.save(tourist).getId();
+
+		return "Tourist got register with Id: " + id;
+	}
+
+	@Override
+	public List<Tourist> getTouristDetails() {
+		
+		List<Tourist> list=repo.findAll();
+		list.sort((t1,t2)->t1.getId().compareTo(t2.getId()));
+		return list;
+	}
+
+}

@@ -1,0 +1,13 @@
+package in.ineuron.model;
+
+import lombok.Data;
+
+@Data
+public class Customer {
+
+	
+	private Integer cid;
+	private String Cname;
+	private Float avg;
+	private String teamName;
+}

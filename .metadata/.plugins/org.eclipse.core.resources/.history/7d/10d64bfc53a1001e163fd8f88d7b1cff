@@ -1,0 +1,16 @@
+package in.ineuron.service;
+
+import org.springframework.stereotype.Service;
+
+import in.ineuron.model.Tourist;
+
+@Service
+public class ITouristServiceImpl implements ITouristMgmtService {
+
+	@Override
+	public String registerTourist(Tourist tourist) {
+	
+		return null;
+	}
+
+}

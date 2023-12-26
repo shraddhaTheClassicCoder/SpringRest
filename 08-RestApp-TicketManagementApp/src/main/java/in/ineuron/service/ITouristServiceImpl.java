@@ -1,0 +1,94 @@
+package in.ineuron.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.ineuron.dao.TouristRepo;
+import in.ineuron.exception.TouristNotFoundException;
+import in.ineuron.model.Tourist;
+
+@Service
+public class ITouristServiceImpl implements ITouristMgmtService {
+
+	@Autowired
+	private TouristRepo repo;
+
+	@Override
+	public String registerTourist(Tourist tourist) {
+
+		Integer id = repo.save(tourist).getId();
+
+		return "Tourist got register with Id: " + id;
+	}
+
+	@Override
+	public List<Tourist> getTouristDetails() {
+
+		List<Tourist> list = repo.findAll();
+		list.sort((t1, t2) -> t1.getId().compareTo(t2.getId()));
+		return list;
+	}
+
+	@Override
+	public Tourist fetchTouristById(Integer id) {
+		Optional<Tourist> optional = repo.findById(id);
+
+		if (optional.isPresent()) {
+			return optional.get();
+		} else {
+			throw new TouristNotFoundException("Tourist with" + id + "not found");
+		}
+	}
+
+	@Override
+	public String updateTouristRecord(Tourist tourist) {
+
+		Optional<Tourist> optional = repo.findById(tourist.getId());
+
+		if (optional.isPresent()) {
+			repo.save(tourist);
+
+			return "Record is updated with id : " + tourist.getId();
+		} else {
+			throw new TouristNotFoundException("Tourist not found with id" + tourist.getId() + "for updation");
+		}
+	}
+
+	@Override
+	public String updateTouristById(Integer id, Float percentage) {
+
+		Optional<Tourist> optional = repo.findById(id);
+
+		if (optional.isPresent()) {
+			Tourist tourist = optional.get();
+
+			tourist.setBudget(tourist.getBudget() + tourist.getBudget() * (percentage / 100));
+
+			return "Record is updateted with id" + id;
+		} else {
+			throw new TouristNotFoundException("Tourist not found with id" + id + "for updation");
+		}
+
+	}
+
+	@Override
+	public String deleteTouristById(Integer id) {
+
+		Optional<Tourist> optional = repo.findById(id);
+
+		if (optional.isPresent()) {
+			Tourist tourist = optional.get();
+			repo.delete(tourist);
+
+			return "Tourist is deleted with Id: " + id;
+		}
+
+		else {
+			throw new TouristNotFoundException("Tourist not found with id" + id + "for Deletion");
+		}
+	}
+
+}
